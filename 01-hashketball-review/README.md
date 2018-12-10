@@ -1,14 +1,30 @@
-# Hashketball Review
+Hashketball Review
+==================
 
-## Objectives
+## SWBAT (Intro)
+
+* Get the lecture code via git
+* Begin formulating their own **process** and do things like:
+  * Follow the flow of code
+  * Check data types
+  * Test assumptions
+    * What do you expect?
+    * What do you get?
+  * Debugging techniques:
+    * `pry`
+    * `puts`
+  * Learn via playing with code
+* Begin learning how to test their own code
+
+## Objectives (Hashketball)
 
 * Distinguish between data types in Ruby
 * Show how to look up documentation for data types in Ruby
 * Demonstrate the use of common Array methods
-  * `#each`
+  * `#each` => do something on every value in the array; always returns the original array
   * `#map`
   * `#select`
-  * `#find`
+  * `#find` => finds things in an array; always returns some thing (either the found value or nil)
 * Differentiate array methods by their respective return values
 * Define the Single Responsibility Principle
 * Employ test-driven development best practices in their labs
