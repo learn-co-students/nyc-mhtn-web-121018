@@ -14,7 +14,11 @@ aka: Object Oriented Programming (OOP)
 * Call methods on the implicit or explicit `self`
 * Define attribute readers and writers using `attr_` macros
 * Get more practice with array compositions (`each`, `map`, `select`, `find`)
-* Explain the need for variable scope and why it's important to not utilize global variables
+* Explain the need for variable scope and why it's important to not utilize global variables - NEVER!!!
+
+- object: thing, or an abstraction of a thing, a thing that can be manipulated with the code language
+- a thing that can do stuff
+
 
 ## Outline / Objectives
 

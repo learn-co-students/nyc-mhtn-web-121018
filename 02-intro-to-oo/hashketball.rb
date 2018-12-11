@@ -153,15 +153,68 @@ def shoe_size(player_name)
   find_player(player_name)[:shoe] # Number
 end
 
-# Homework!
-# 1. Write a method that will give me all the player names in an array
-# => ["Jeff Adrien", "Ben Gordon", etc...]
 
-# 2. Write a method to give me all the players with more than 10 points
-# => [ {} , {}, etc...]
+# WHY??????????
+# oh, fixnum is special!
+# Syntatic Sugar
 
-# 3. Write those same two, but with an .each
+jeff_adrien = {
+  player_name: "Jeff Adrien",
+  number: 4,
+  shoe: 18,
+  points: 10,
+  rebounds: 1,
+  assists: 1,
+  steals: 2,
+  blocks: 7,
+  slam_dunks: 2
+}
 
+jason_terry = {
+  player_name: "Jason Terry",
+  number: 31,
+  shoe: 15,
+  points: 19,
+  rebounds: 2,
+  assists: 2,
+  steals: 4,
+  blocks: 11,
+  slam_dunks: 1
+}
+
+bob = { name: "Bob", claws: true, weight: 10 }
+
+# PascalCase
+# camelCase
+# snake_case
+# kebab-case
+class BasketballPlayer # the capitalization is required
+  # attributes => instance variable => hold data for the instance
+  # @name, @number
+
+  # SHORTCUTS!!!
+  # select some text, then press CMD + D to highlight the next matching one
+
+  # this methods is called when you do BasketballPlayer.new
+  def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
+    @name = player_name
+    @number = number
+    @shoe_size = shoe
+    @points = points
+    @rebounds = rebounds
+    @assists = assists
+    @steals = steals
+    @blocks = blocks
+    @slam_dunks = slam_dunks
+    # local variable
+  end
+
+end # end of BasketballPlayer class
+
+jeff = BasketballPlayer.new(  "Jeff Adrien", 4, 18, 10, 1, 1, 2, 7, 2)
+jason = BasketballPlayer.new("Jason Terry",31,15,19,2,2,4,11,1)
+
+# 🤔 think about how to first access our data?
 
 binding.pry
 

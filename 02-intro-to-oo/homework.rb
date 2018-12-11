@@ -157,11 +157,39 @@ end
 # 1. Write a method that will give me all the player names in an array
 # => ["Jeff Adrien", "Ben Gordon", etc...]
 
+# it will return an array of the same size
+# in each spot in the array,
+# it gets whatever you return in your map
+player_names = all_players.map do |player| # Hash
+  player[:player_name] # String
+end
+player_names.join
+
 # 2. Write a method to give me all the players with more than 10 points
 # => [ {} , {}, etc...]
+# from the original array,
+# it return a new array with ONLY the values
+# where you returned true
+x = all_players.select do |player| # Hash
+  player[:points] > 10 # true/false
+end
+
+# the names of the players with points > 10
+# first get the players with points > 10
+# then get the names of those players
 
 # 3. Write those same two, but with an .each
+names = []
+all_players.each do |player| # Hash
+  names << player[:player_name]
+end
 
+points = []
+all_players.each do |player|
+  if player[:points] > 10
+    points << player
+  end
+end
 
 binding.pry
 
