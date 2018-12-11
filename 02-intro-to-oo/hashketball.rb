@@ -120,7 +120,7 @@ def game_hash
 end
 
 # Return => Array of player Hashes
-def all_players
+def all_players # self.all
   home_players = game_hash[:home][:players] # Array of player Hashes
   away_players = game_hash[:away][:players] # Array of player Hashes
   home_players + away_players # Array of player Hashes
@@ -141,6 +141,7 @@ end
 #   player_name => String
 # Return => Number
 def num_points_scored(player_name)
+  binding.pry
   # Hash       # String     #Symbol
   find_player(player_name)[:points] # Number
 end
@@ -184,17 +185,52 @@ jason_terry = {
 
 bob = { name: "Bob", claws: true, weight: 10 }
 
+# binding.pry
+
 # PascalCase
 # camelCase
 # snake_case
 # kebab-case
 class BasketballPlayer # the capitalization is required
+  # binding.pry
+  # macro
+  attr_reader :name, :number, :shoe_size #, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+  # attr_writer :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+  attr_accessor :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+
+  # binding.pry
   # attributes => instance variable => hold data for the instance
   # @name, @number
 
   # SHORTCUTS!!!
   # select some text, then press CMD + D to highlight the next matching one
 
+  # this is kept on the class
+  # @@class_variable
+  @@all = [] # this is being "initialized" when the class is read by the program
+
+  # instance method
+  # def all
+  #
+  # end
+
+  # binding.pry
+  # Who should be doing the finding?
+  def self.find_player(player_name)
+    # Array of BasketballPlayer instances
+    @@all.find do |player| # BasketballPlayer instance
+      # String       # String
+      player.name == player_name # Boolean
+    end
+  end
+
+  # class method <= sadly, no better way
+  def self.all
+    @@all
+  end
+
+  # .new is called on the class => class method
+  # looks like an instance method
   # this methods is called when you do BasketballPlayer.new
   def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
     @name = player_name
@@ -206,16 +242,85 @@ class BasketballPlayer # the capitalization is required
     @steals = steals
     @blocks = blocks
     @slam_dunks = slam_dunks
+
     # local variable
+    ps = points
+
+    # binding.pry
+    @@all << self # you are the thing (instance) being made at that point
   end
+
+  # instance methods
+  def slam_dunk
+    binding.pry # self is super nifty and special
+    # self # it gives you back the thing that called the method
+    # self.two_pointer
+    two_pointer # self.two_pointer
+    # @points = @points + 2 # two_pointer
+    @slam_dunks += 1
+    "the crowd goes wild!!!"
+  end
+
+  def layup
+    two_pointer
+    # @points = @points + 2
+    "boooo!"
+  end
+
+  # helper method
+  def two_pointer
+    @points = @points + 2
+  end
+
+  # instance method => getter
+  # def name
+  #   @name
+  # end
+
+  # def number
+  #   @number
+  # end
+
+  # instance method => setter
+  # def name=(name) # really nice sytantic sugar
+  #   @name = name
+  # end
 
 end # end of BasketballPlayer class
 
 jeff = BasketballPlayer.new(  "Jeff Adrien", 4, 18, 10, 1, 1, 2, 7, 2)
 jason = BasketballPlayer.new("Jason Terry",31,15,19,2,2,4,11,1)
 
+$all_basketball_players = [jeff, jason]
+
+b1 = BasketballPlayer.new("Jason Terry",31,15,19,2,2,4,11,1)
+$all_basketball_players << b1
+b2 = BasketballPlayer.new("Jason Terry",31,15,19,2,2,4,11,1)
+$all_basketball_players << b2
+b3 = BasketballPlayer.new("Jason Terry",31,15,19,2,2,4,11,1)
+$all_basketball_players << b3
+b4 = BasketballPlayer.new("Jason Terry",31,15,19,2,2,4,11,1)
+$all_basketball_players << b4
+
+# GLOBAL VARIABLES OMG! NOT MONEYH!
+
 # 🤔 think about how to first access our data?
 
+
+bob = { name: "Bob", claws: true, weight: 10 }
+
+class Cat
+  attr_accessor :claws, :weight
+  attr_reader :name
+
+  def initialize(name, claws, weight)
+    @name = name
+    @claws = claws
+    @weight = weight
+  end
+end # end of Cat class
+
+better_bob = Cat.new("Bob", true, 10)
 binding.pry
 
 puts "bye bye!"
