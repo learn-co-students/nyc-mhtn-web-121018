@@ -8,6 +8,7 @@ require 'pry'
 # * Use `puts` to help understand code flow / program execution
 # * Use `.class` to check data types
 # * Understand what can be done to different data types
+#   * .methods
 #   * (ex: can't add a number to an array, a hash cannot be capitalized)
 # * Use `pry` to investigate the code
 #   * If you `pry` above the code, it won't exist!
@@ -151,6 +152,8 @@ end
 def num_points_scored(player_name)
   # Hash       # String     #Symbol
   find_player(player_name)[:points] # Number
+  # TODO: later
+  # HACK: not so great, refactor this
 end
 
 # Arguments:
@@ -314,7 +317,7 @@ class Player # this has to be capitalized
 
   # This is a Class method. Methods for the entire Class!
   # Called with Player.all
-  def self.all
+  def self.all # NO MACRO!
     @@all # in this class method, we are writing
           # a getter to retrieve the @@all class variable
   end
@@ -461,3 +464,5 @@ c3 = Cat.new("Sugar", true, 10)
 binding.pry
 
 puts "bye bye!"
+
+# WAY TOO MANY!
