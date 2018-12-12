@@ -42,15 +42,17 @@ _Why do we care so much about codifying and being really specific about the term
   * where all the information is kept in one place
   * everything else relying on that information is calculated
   * that way, updating one thing, reflects changes everywhere else
-  
+
 ### Deliverables
 
-* Create a User class. The class should have these methods:
-  * `#initialize` which takes a username and has a reader method for the username
-  * `#tweets` that returns an array of Tweet instances
-  * `#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
-* Create a Tweet class. The class should have these methods:
-  * `Tweet#message` that returns a string
-  * `Tweet#user` that returns an instance of the user class
-  * `Tweet.all` that returns all the Tweets created.
-  * `Tweet#username` that returns the username of the tweet's user
+ALWAYS READ THE README!
+
+* [ ] Create a User class. The class should have these methods:
+  * [ ] `#initialize` which takes a username and has a reader method for the username
+  * [ ] `#tweets` that returns an array of Tweet instances
+  * [ ] `#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
+* [ ] Create a Tweet class. The class should have these methods:
+  * [ ] `Tweet#message` that returns a string
+  * [ ] `Tweet#user` that returns an instance of the user class
+  * [ ] `Tweet.all` that returns all the Tweets created.
+  * [ ] `Tweet#username` that returns the username of the tweet's user

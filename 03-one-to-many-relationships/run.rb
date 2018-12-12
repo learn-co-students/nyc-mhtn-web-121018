@@ -2,6 +2,8 @@ require 'pry'
 require_relative './basketball_player'
 require_relative './cat'
 require_relative './team'
+require_relative './user'
+require_relative './tweet'
 
 # Problem:
 # we can right now ask the team for its players
@@ -45,6 +47,22 @@ p10 = BasketballPlayer.new("Brendan Haywood", 33, 15, 6, 12, 12, 22, 5, 12, t2)
 # then assign the teams to the players
 
 # p1.team
+
+
+# Test my code.
+u1 = User.new("Mike Cheng")
+u2 = User.new("Cinnamon")
+u3 = User.new("Mike Cheng")
+
+tw1 = Tweet.new("hey!!", u1)
+tw2 = Tweet.new("meow!!", u2)
+tw3 = Tweet.new("blah", u1)
+
+
+
+
+
+
 binding.pry
 
 puts "bye bye!"
