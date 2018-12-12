@@ -1,12 +1,12 @@
 class BasketballPlayer
-  attr_accessor :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+  attr_accessor :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks, :team
   attr_reader :name
   # attr_writer
 
   @@all = [] # Array of Player instances
 
                  # String     Number  Number Number Number    Number   Number  Number  Number
-  def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
+  def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks, team)
     @name = player_name
     @number = number
     @shoe_size = shoe
@@ -16,9 +16,20 @@ class BasketballPlayer
     @steals = steals
     @blocks = blocks
     @slam_dunks = slam_dunks
+    @team = team
 
     @@all << self
   end
+
+  # when i run .team, who is running this method?
+  # def team # this is also very inefficient
+  #   # loop through all the teams
+  #   Team.all.find do |team| # Team instance
+  #       # find the player associated with that team
+  #     team.players.include?(self) # BasketballPlayer instance
+  #   end
+  #   # then puts the thing
+  # end
 
   def slam_dunk
     self.two_pointer

@@ -24,20 +24,25 @@
 
 ### Define
 
-* Model
-* Domain
-* Domain modeling
-* Relationships
+* Model - blueprints; class - BasketballPlayer, Cat
+* Domain - domain name, a place (to teach....??? programming) refers to your subject matter
+* Domain modeling - blueprints for your subject matter
+* Relationships - models have relationships
   * One to many relationship
+    - something `has_many` of something else
+    - that something else `belongs_to` that something
   * Many to many relationship (for next lecture!)
   * belongs to
   * has many
 
 _Why do we care so much about codifying and being really specific about the terminology of has-many/belongs-to?_ The terms are very powerful because we can use the same idea to describe relationships across many different types of domains. The relationship between artist and song, is the same as book and author, user and tweets, etc.
 
-* Schema
+* Schema - this is the visual representation of your domain model
 * Single Source of Truth
-
+  * where all the information is kept in one place
+  * everything else relying on that information is calculated
+  * that way, updating one thing, reflects changes everywhere else
+  
 ### Deliverables
 
 * Create a User class. The class should have these methods:
