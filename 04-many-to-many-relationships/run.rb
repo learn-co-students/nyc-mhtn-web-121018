@@ -4,6 +4,9 @@ require_relative './cat'
 require_relative './team'
 require_relative './user'
 require_relative './tweet'
+require_relative './squirrel'
+require_relative './tree'
+require_relative './nest'
 
 # Problem:
 # we can right now ask the team for its players
@@ -52,9 +55,24 @@ tw2 = Tweet.new("meow!!", u2)
 tw3 = Tweet.new("blah", u1)
 
 
+# color, size
+s1 = Squirrel.new("brown", 2)
+s2 = Squirrel.new("grey", 4)
+s3 = Squirrel.new("fuschia", 24)
 
+#type, age
+tr1 = Tree.new("birch", 2000)
+tr2 = Tree.new("maple", 45)
+tr3 = Tree.new("Christmas Tree", 9001)
 
+n1 = Nest.new("big", tr3, s1)
+n2 = Nest.new("small", tr1, s3)
+n3 = Nest.new("medium", tr2, s1)
+n4 = Nest.new("giant super sized", tr3, s3)
 
+# reuse the method which makes sense => but it doesnt work
+# 1. have to break the loop somehow
+# 2. to do it the hacky way and not reuse your methods
 
 binding.pry
 
