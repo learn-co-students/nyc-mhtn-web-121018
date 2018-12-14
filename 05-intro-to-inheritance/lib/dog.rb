@@ -1,3 +1,3 @@
-class Dog
-
+class Dog < Pet
+  include ModuleName
 end

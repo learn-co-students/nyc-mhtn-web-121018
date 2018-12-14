@@ -2,4 +2,6 @@
 
 require 'pry'
 require 'require_all'
-require_all 'lib'
+require_relative '../lib/module'
+require_relative '../lib/pet'
+require_all 'lib' # alphabetical
