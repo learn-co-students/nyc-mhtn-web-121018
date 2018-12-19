@@ -14,21 +14,78 @@
 
 1. Books and Authors where each book has a single author. Books should have a title
 
-  Q: Write the SQL to find all books written by a certain author given that author's id
+  - one-to-many relationship
+
+  models == class == table
+
+  (foreign key) author_id
+
+  books
+  id (isbn) | title            | genre       | author_id
+  1         | "The Pilgrim"    | "Thriller"  | 4
+  2         | "Harry Potter"   | "Fantasy"   | 3
+  3         | "Harry Potter 2" | "Fantasy"   | 3
+
+  authors
+  id | name
+  1  | "John Doe"
+  2  | "John Doe"
+  3  | "JK Rowling"
+  4  | "Terry Hayes"
+
+
+  Q: Write the SQL to find all books written by a certain author given that author's id (name)
+
+  a1.books
 
   ```SQL
-
+  SELECT books.title, books.genre
+  FROM books
+  JOIN authors
+  ON books.author_id = authors.id
+  WHERE authors.name = "JK Rowling";
   ```
 
 2. Books and Authors where each book can have one or MULTIPLE authors. Books should have a title and authors should have a name.
 
   - What type of relationship is this?
+    - many-to-many
+
+    books
+    id (isbn) | title            | genre      
+    1         | "The Pilgrim"    | "Thriller"
+    2         | "Harry Potter"   | "Fantasy"  
+    3         | "Harry Potter 2" | "Fantasy"  
+
+    JOIN TABLE => a table to JOIN two other tables
+    book_authors => this represents the relationship between books and authors
+    id | author_id | book_id
+    1  | 4         | 1
+    2  | 3         | 2
+    3  | 3         | 3
+    4  | 2         | 2
+
+    authors
+    id | name
+    1  | "John Doe"
+    2  | "John Doe"
+    3  | "JK Rowling"
+    4  | "Terry Hayes"
 
   Q. Write the SQL to find all books written by certain author given their name
 
   ``` SQL
-
+  SELECT books.title, books.genre
+  FROM books
+  JOIN book_authors
+  ON books.id = book_authors.book_id
+  JOIN authors
+  ON authors.id = book_authors.author_id
+  WHERE authors.name = "JK Rowling";
   ```
+
+  Database Admin => is that person who will architect your database
+  The actual data comes from users, scraping, or whatever.
 
 3. Squirrels have Nests in Trees -- Build table
 
@@ -65,19 +122,51 @@ Q: Write the SQL to find all Squirrels in a "christmas tree"
 
 ## Object Relational Mapper (ORM)
 
+Object => Ruby, everything is an object.
+Relational => SQL Today! All them databases that we're using are relational databases. => Object Oriented Relationships
+Mapper => .map
+This thing lets you interface with a database.
+Without ever writing SQL.
+
+All those tables => classes
+All those rows => instances
+Instead of writing SQL, you work with objects in Ruby.
+You will be manipulating a database without actually writing SQL.
+
+Nothing ever happens to the database unless you tell it to.
+
+The one I build today will be suuuuuuper simple.
+You won't be building this, but you will be using this.
+
 ### CRUD REVIEW
 
 What are the four ways we can interact with Data?
 
-### Active Record Pattern
+CREATE
+  - CREATE, INSERT INTO
+  -         Cat.new
+READ
+  - SELECT
+  - attr_reader :name => sugar.name
+UPDATE
+  - UPDATE, ALTER TABLE
+  - attr_writer :name => sugar.name = "Poo poo"
+DELETE/DESTROY
+  - DELETE
+  - .pop(), .unshift(), .clear() => .destroy
+
+### Active Record Pattern <=== Active Record
 
 - each table in our DB should correspond to a ruby class (Model)
-- table is ALWAYS plural and the Model/Class is Singular
+- table is ALWAYS lowercase plural and the Model/Class is Singular
+  - cats => Cat
+  - book_authors => BookAuthor
 - instances of one of those classes are represented as a row in our DB
 - each column represents an attribute on each instance
 
 ### How to persist Data?
 
+Databases
 
 ## Code Walkthrough
 

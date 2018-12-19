@@ -4,3 +4,11 @@ desc 'Loads up a console!'
 task :console do
   Pry.start
 end
+
+desc 'Meowing'
+task :meow do
+  puts "Meow!"
+end
+
+# Makefile => Rakefile
+# make => rake
