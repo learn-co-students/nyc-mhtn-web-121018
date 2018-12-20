@@ -1,5 +1,5 @@
-Intro to Active Record
-======================
+Intro to Active Record & Associations
+=====================================
 
 ## SWBATs
 
@@ -7,6 +7,18 @@ Intro to Active Record
 - Run migrations and read their schema
 - Practice with ActiveRecord::Base instance and class methods
 - Perform persistent CRUD actions on one model using ActiveRecord
+
+---
+
+* Explain how ActiveRecord works for non-related models
+* Implement one-to-many relationships using ActiveRecord `has_many` and `belongs_to`
+* Implement many-to-many relationships using ActiveRecord `has_many, :through`
+* Describe the methods that the relationship macros add to a model
+* Practice looking up library documentation
+  * Specifically, looking up documentation for ActiveRecord
+    * Migrations
+    * Association Macros
+    * Rake tasks
 
 ## Overview
 
@@ -19,6 +31,25 @@ Intro to Active Record
   - [ ] Schema
 - Methods from Active Record
   - [ ] Important Methods (see bottom of Lecture Notes)
+
+
+Domain
+2 Hashketball???????????????????? DELETE??????????? DESTROY??
+2 Squirrels Nests Trees
+1 Flatiron Student
+1 A Game => Tetris,
+2 Mario
+8 Airlines, Travel
+
+Airline Passenger Tickets
+
+Airline >-< Passenger
+   |             |
+   --< Ticket >--
+
+model => class => table
+- lowercase plural => table
+- capitalized singular => class
 
 ## Remember These Steps!!!
 
