@@ -170,7 +170,7 @@ Databases
 
 ## Code Walkthrough
 
-- bin/run.rb
+- bin/run.rb => binary
 - config/environment.rb
 - Gemfile
 - db/twitter.db
