@@ -20,6 +20,11 @@ Intro to Active Record & Associations
     - Association Macros
     - Rake tasks
 
+Domain =>  What do I want to build?
+SantaClaus --< Present
+
+
+
 ## Overview
 
 - Review Project Setup (files, migrations, models)

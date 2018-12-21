@@ -10,17 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_192644) do
+ActiveRecord::Schema.define(version: 2018_12_21_202749) do
 
   create_table "airlines", force: :cascade do |t|
     t.string "name"
     t.string "headquarters"
   end
 
+  create_table "kid_parents", force: :cascade do |t|
+    t.integer "kid_id"
+    t.integer "parent_id"
+  end
+
+  create_table "kids", force: :cascade do |t|
+    t.string "name"
+    t.boolean "good"
+    t.integer "santum_id"
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "passengers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
+  end
+
+  create_table "presents", force: :cascade do |t|
+    t.integer "size"
+    t.float "price"
+    t.string "name"
+    t.integer "santum_id"
+    t.integer "kid_id"
+  end
+
+  create_table "santa", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "tickets", force: :cascade do |t|
