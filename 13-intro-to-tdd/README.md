@@ -81,3 +81,11 @@ def is_palindrome?(word)
   downcased_word == downcased_word.reverse
 end
 ```
+
+https://semaphoreci.com/community/tutorials/getting-started-with-rspec
+
+https://stackoverflow.com/questions/1001211/strip-replace-spaces-within-a-string
+
+https://rubular.com/
+
+https://eloquentjavascript.net/09_regexp.html
