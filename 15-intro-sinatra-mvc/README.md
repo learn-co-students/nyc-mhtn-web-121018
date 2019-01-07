@@ -3,6 +3,9 @@
 ## SWBATs
 
 * Explain the Model View Controller (MVC) pattern and give an example
+  - Model: class, table, persisting
+  - Controller: middle, intermediary, takes the requests, turns them into responses => it's the go between
+  - View: HTML, how it looks in the browser, user interaction
 * Explain how web frameworks (like Sinatra) use the MVC pattern and why
 * Define 'convention over configuration'
 * Implement one model that inherit from ActiveRecord
@@ -16,7 +19,20 @@
 
 - [ ] How and why we use the MVC pattern
 - [ ] How CRUD actions map to RESTful Routing
-  - Deliverables! Routing!
+  - Create, Read, Update, Destroy/Delete
+    - Create, Insert
+    - Select
+    - Update
+    - Delete, Drop
+  - HTTP Verbs
+    - GET => Read
+    - POST => Create
+    - PUT/PATCH => Update
+    - DELETE => Delete
+    - v1.1 => GET / POST <= whacky hacks
+  - Deliverables!
+  - Routing!
+    - Routes => they help us execute our HTTP Actions
 - [ ] Define _"convention over configuration"_
 - [ ] How Sinatra serves up data in response to web requests
  - Deliverables! Code!
@@ -37,27 +53,33 @@
 - *View*:
 - *Controller*:
 - *RESTful Routing (REST)*:
+  - REST => REpresentational State Transfer
+  - Convention
 - *convention over configuration*:
 
 ## Deliverables
 
 For each deliverable what is the route?
 
-- view information on an individual book
-
+7 RESTful Routes
 
 - view all books
+  - GET /books
 
+- view information on an individual book
+  - GET /books/:id <== primary key
 
-- create a new book
+- create a new book <- 2 routes
+  - GET /books/new
+  - POST /books
 
-
-- edit an existing book
-
+- edit an existing book <- 2 routes
+  - GET /books/:id/edit
+  - PATCH/PUT /books/:id
 
 - delete an existing book
-
-
+  <!-- - GET /books/:id < some sort of button -->
+  - DELETE /books/:id
 
 ## Lecture Notes
 

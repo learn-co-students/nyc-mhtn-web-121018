@@ -1,5 +1,5 @@
 module GoogleBooks
-  class Adapter
+  class Adapter # Adapter Pattern
     BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
 
     attr_reader :author
@@ -21,6 +21,7 @@ module GoogleBooks
       end
     end
 
+    # this is for methods that you don't want other developers using
     private
 
     def author_url(max_results = 20)
