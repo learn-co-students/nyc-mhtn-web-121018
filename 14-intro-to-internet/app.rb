@@ -18,7 +18,13 @@ class App
     # TODO: create some new songs
 
     if request.path =~ /songs/
+      Song.new("Hello")
+      Song.new("Goodbye")
+
       song_list_items = Song.all.map { |song| "<li>#{song.title}</li>" }.join
+
+      Song.new("Thriller")
+
 
       resp.write("
           <h1>Bomb Song List</h1>
