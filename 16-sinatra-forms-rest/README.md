@@ -21,3 +21,6 @@ You want to understand:
 What am I building???
 Domain => name => New Years Resolution App => Rezzy
 resolutions
+=> goals:string
+=> deadline:datetime
+=> accomplished:boolean
