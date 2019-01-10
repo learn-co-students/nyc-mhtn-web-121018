@@ -1,0 +1,6 @@
+<h1>All the Students!!!!</h1>
+
+<% @students.each do |s| %>
+  <p>Student name: <%= s.name %></p>
+  <p>Teacher name: <%= s.teacher.name %></p>
+<% end %>

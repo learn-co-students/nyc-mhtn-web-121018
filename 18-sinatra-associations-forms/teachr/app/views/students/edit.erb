@@ -1,0 +1,15 @@
+<h1>Make a student</h1>
+
+<!--  creating a teacher, so no id yet -->
+<form action="/students" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="text" name="students[name]" placeholder="New Student Name">
+    <!-- <input type="number" name="teacher_id" placeholder="Give me the teacher id"> -->
+    <!-- Somewhere, we have to put a name -->
+    <select name="students[teacher_id]">
+      <% @teachers.each do |t| %>
+        <option value="<%= t.id %>"><%= t.name %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Submit Make a student">
+</form>

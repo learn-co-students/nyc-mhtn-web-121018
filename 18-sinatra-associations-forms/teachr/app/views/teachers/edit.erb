@@ -1,0 +1,8 @@
+<h1>Edit: <%= @teacher.name %></h1>
+
+<!--  editing a teacher, so I have an id now -->
+<form action="/teachers/<%= @teacher.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="text" name="teachers[name]" placeholder="New Teacher Name" value="<%= @teacher.name %>">
+    <input type="submit" name="submit-button" value="Edit The Teacher">
+</form>
