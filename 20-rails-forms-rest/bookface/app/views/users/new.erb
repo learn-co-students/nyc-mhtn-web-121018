@@ -1,0 +1,33 @@
+<h1>New User</h1>
+
+<form action="/users" method="post">
+  <input type="text" name="user[username]" placeholder="pick a username">
+  <input type="password" name="password" placeholder="password super secret">
+  <input type="text" name="email" placeholder="your email">
+  <input type="submit">
+</form>
+
+
+<!-- form_tag, route, method => custom forms -->
+<%= form_tag users_path, method: :post %>
+<%= text_field_tag :username %>
+<%= password_field_tag :password %>
+<%= email_field_tag :email %>
+<%= submit_tag %>
+
+<!-- form_for => touch your model => stupid smart -->
+<%= form_for @user, url: users_path, html: { method: "post" } do |f| %>
+  <%= f.text_field :username %>
+  <%= f.password_field :password %>
+  <%= f.email_field :email %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<!-- if you give it a empty user => it knows to post and create
+      if you give it an existing user => it knows to patch and fill in stuff -->
+<%= form_for @user do |f| %>
+  <%= f.text_field :username %>
+  <%= f.password_field :password %>
+  <%= f.email_field :email %>
+  <%= f.submit %>
+<% end %>

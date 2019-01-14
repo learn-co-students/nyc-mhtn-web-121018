@@ -9,7 +9,24 @@ Rails Forms & REST
 * Begin thinking about checking information before creating things.
 * Begin thinking about building a better UX - `link_to`, `button_to`, `button_tag`.
 
+Splat & buttons
+
 ## Outline
+
+Facebook - bookface
+cd intothefiolder
+users
+  - username
+  - password <== this is not how we store this
+  - email
+  - self-referencing tables <= google this!
+posts - tomorrow
+profiles - tomorrow
+
+rails g model ....
+rails g controller ...
+
+both of these in one!!!
 
 1. New domain that extends to tomorrow.
   * `rails g resource ModelName column:type`
