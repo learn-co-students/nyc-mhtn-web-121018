@@ -1,0 +1,11 @@
+<h1> See All the Users!!! </h1>
+
+<% @users.each do |user| %>
+  <p><%= user.username %></p>
+  <a href=<%= "/users/#{user.id}" %>>Go See User</a>
+  <!-- you want to think about UX; what makes sense -->
+  <%= link_to "Go See User", "/users/#{user.id}" %>
+  <!-- but I have writing our interpolated strings -->
+  <%= link_to "Go See User", user_path(user) %>
+  <%= link_to "Go See User", user %>
+<% end %>

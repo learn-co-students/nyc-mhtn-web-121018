@@ -1,0 +1,34 @@
+<h1>Edit This Post!</h1>
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.label :sponsor %>
+  <%= f.text_field :sponsor %>
+
+  <!-- But Atom is failing to syntax highlight
+  <%= f.label :user_id %>
+  <%= f.number_field :user_id %>
+  -->
+
+  <select name="post[user_id]">
+    <%= @users.each do |user| %>
+      <option value="<%= user.id %>"><%= user.username %></option>
+    <% end %>
+  </select>
+
+  <!--                                      value  display         -->
+  <%= f.collection_select(:user_id, @users, :id, :username)  %>
+  <!-- MAGIC!!!   for the selected part  => 1. it knows the current value... but how?
+
+    @users.each do |user|
+      if user.id == @post.user_id
+        set selected attribute
+
+ -->
+
+
+  <%= f.submit %>
+<% end %>
