@@ -21,6 +21,13 @@ Dog Buddy?
   - breed
   - clean
 
+Menu Options
+- we did some validation
+- no garbage, we trust no one
+
+Frontend Validation == nicer user experience
+Backend Validation == don't break anything
+
 ## Outline
 
 1. New Rails application == New Domain!
@@ -42,6 +49,7 @@ Dog Buddy?
   - **The Problem:** So so so many choices... 🤯
   - `render` vs `redirect` and data persistence
   - `flash[:notice]`, `flash[:data]`, etc.
+  - Hold strong opinions weakly - be open to change and other ideas
 7. Custom Validations
   - **The Problem:** Very specific, custom validations.
   - _Batteries included._
