@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cuteness_level: 1
+  name: MyString
+  size: MyString
+  breed: MyString
+  clean: false
+
+two:
+  cuteness_level: 1
+  name: MyString
+  size: MyString
+  breed: MyString
+  clean: false

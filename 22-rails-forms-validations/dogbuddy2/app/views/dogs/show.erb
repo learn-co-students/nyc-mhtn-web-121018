@@ -1,0 +1,15 @@
+<h1>Show that dog! 🐕🐩</h1>
+
+<% if flash[:success] %>
+  <p><%= flash[:success] %></p>
+<% end %>
+
+<ul>
+  <li><%= @dog.name %></li>
+  <li><%= @dog.breed %></li>
+  <li><%= @dog.size %></li>
+  <li><%= @dog.cuteness_level %></li>
+  <li><%= @dog.clean %></li>
+</ul>
+
+<!-- because I'm lazy -->

@@ -1,0 +1,29 @@
+<h1>Sign up your dog for rental mwahahaha! 🐕🐩</h1>
+
+<!-- but this is for cleaner code,
+  move more of your logic into the controller
+  the view conceptually is for rendering layout/data
+  People will have opinions on this.
+-->
+<-- flash[:errors] vs @errors
+  @dog.errors.full_messages vs @errors
+-->
+<% if flash[:errors] %>
+  <% flash[:errors].each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @dog do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :breed %>
+  <%= f.text_field :breed %><br/>
+  <%= f.label :cuteness_level %>
+  <%= f.number_field :cuteness_level %><br/>
+  <%= f.label :size %>
+  <%= f.text_field :size %><br/>
+  <%= f.label :clean %>
+  <%= f.check_box :clean %><br/>
+  <%= f.submit %>
+<% end %>
