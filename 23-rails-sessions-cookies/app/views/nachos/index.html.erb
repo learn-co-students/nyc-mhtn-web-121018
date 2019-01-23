@@ -1,11 +1,6 @@
 <h1>Menu</h1>
 
-<h4>Your Cart: </h4>
-<ol>
-  <li>🤔</li>
-</ol>
-
-<hr>
+<%= render "cart" %>
 
 <% @nachos.map do |nacho| %>
   <ul>
@@ -14,7 +9,9 @@
       $<%= nacho.price %>
       <%=
         button_to "Add To Cart",
-        "/where/to/hmmmmmm"
+        mario_cart_path,
+        method: :patch,
+        params: { item_id: nacho.id }
       %>
     </li>
   </ul>

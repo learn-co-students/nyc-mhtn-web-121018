@@ -13,6 +13,28 @@
   - [ ] Use cookies to store data on the browser
   - [ ] Cookies are key-value pairs with some extra info
 
+Shopping Cart Model
+- every time they add an item, delete, start new shopping cart, close => instances
+- how many columns?
+- differentiate between items
+- can access one, can possibly access all
+- steal a shopping cart
+- add to someone elses cart
+- we have no auth
+- no one said model...
+
+Because we cannot use a model... yet...
+we need a different place to store the shopping cart
+- to store data that sticks around
+- make HTTP stateful
+- flash => make HTTP stateful
+  - it was for one request
+- there needs to be something more stateful => session
+
+Shopping cart -
+
+session - is kept in the cookie which is tied to your browser
+
 ## What are Sessions?
 
 ### From the [Rails Docs](https://guides.rubyonrails.org/security.html#sessions):
