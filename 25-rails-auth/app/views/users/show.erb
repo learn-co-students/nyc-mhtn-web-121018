@@ -4,3 +4,7 @@
 <p><%= @user.password %></p>
 
 <%= image_tag @user.avatar %>
+
+<% if params[:id] == session[:user_id] %>
+  <%= button_to "Delete my account", "/path/to/delete/route", method: :delete %>
+<% end %>

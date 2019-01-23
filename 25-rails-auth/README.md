@@ -11,6 +11,7 @@
 - Augment a user model in rails using `bcrypt`, `password_digest`, and `has_secure_password`
 - Expose this information in a sample rails app
 - Go over sessions, cookies, and implement sign up, log in, and log out
+  - thinking about authorization logic
 
 Security <== one of th ebigger things you don't want to reimplement
 
@@ -76,6 +77,18 @@ Try to check:
 - prevent DOS/DDOS
 - if they have crappy encryption
 
+Password Managers
+vs
+Auth - what we're doing
+- in case we on the server are compromised
+
+
+Attack Surface
+- crack one
+- you need to trust that password manager
+
+I use one.
+- I never reuse passwords on websites anymore.
 
 ## Steps
 
