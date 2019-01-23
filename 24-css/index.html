@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <!-- we will now see something in here -->
+    <!-- language of CSS -->
+    <!-- selectors -> looking at examples, playing with them -->
+    <!-- point system 0000 -->
+    <style>
+      p {
+        color:pink;
+      }
+
+      /* same level of specificity, last one wins */
+      #pika {
+        background-color: yellow;
+      }
+      .cool {
+        background-color: blue;
+      }
+      .fire {
+        background-color: red;
+      }
+      li {
+        color: green;
+        font-weight: 600;
+        list-style: none;
+        background-color: purple;
+      }
+
+      /* classes should keep together similar attributes */
+      div p.cool {
+        background-color: black;
+        padding: 100px;
+        border: 10px dashed red;
+        margin: 50px;
+      }
+
+      #sidebar {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <!-- block vs inline vs inline-block -->
+  </head>
+  <body>
+    <header>
+      <h1 style="color:pink;background-color:blue">Welcome to CSS!</h1>
+    </header>
+    <content>
+      <!-- block -->
+      <div id="sidebar">
+        <p class="cool">More CSS? <span>Something else.</span> Whatever <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"></img></p>
+        <p class="cool">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis et libero vitae varius. Morbi ornare felis leo, nec bibendum tellus malesuada quis. Curabitur id ipsum ultricies, vehicula dolor et, vulputate lacus. Nam convallis sagittis arcu, et lacinia tortor maximus eget. Vivamus at sem commodo, euismod felis nec, vulputate turpis. Donec nec diam sapien. Aliquam sollicitudin aliquam risus, a pharetra sapien. Suspendisse in turpis risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        <!-- inline  => they go with the flow -->
+
+        <!-- inline block -->
+
+        <!-- document flow -->
+        <!-- float vs clear => tells how elements position themselves respective to other elements around it -->
+
+        <!-- layouts -->
+        <!-- they can be done with either:
+          * width, height => sucks to do
+          * flexbox/grid =>
+          * framework => bootstrap, semantic, foundation, etc.
+            1. they are generally browser compatible
+            2. but also check that framework's list of compatibility
+            3. they give ytou a ton of stuff out of the box
+        -->
+      </div>
+      <div id="main-content">
+        <p class="cool">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis et libero vitae varius. Morbi ornare felis leo, nec bibendum tellus malesuada quis. Curabitur id ipsum ultricies, vehicula dolor et, vulputate lacus. Nam convallis sagittis arcu, et lacinia tortor maximus eget. Vivamus at sem commodo, euismod felis nec, vulputate turpis. Donec nec diam sapien. Aliquam sollicitudin aliquam risus, a pharetra sapien. Suspendisse in turpis risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        <p class="cool">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis et libero vitae varius. Morbi ornare felis leo, nec bibendum tellus malesuada quis. Curabitur id ipsum ultricies, vehicula dolor et, vulputate lacus. Nam convallis sagittis arcu, et lacinia tortor maximus eget. Vivamus at sem commodo, euismod felis nec, vulputate turpis. Donec nec diam sapien. Aliquam sollicitudin aliquam risus, a pharetra sapien. Suspendisse in turpis risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        <p class="cool">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis et libero vitae varius. Morbi ornare felis leo, nec bibendum tellus malesuada quis. Curabitur id ipsum ultricies, vehicula dolor et, vulputate lacus. Nam convallis sagittis arcu, et lacinia tortor maximus eget. Vivamus at sem commodo, euismod felis nec, vulputate turpis. Donec nec diam sapien. Aliquam sollicitudin aliquam risus, a pharetra sapien. Suspendisse in turpis risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+      </div>
+      <ul>
+        <li class="cool">Bulbasur</li>
+        <li id="pika" class="cool fire">Pikachu</li>
+        <li class="not-cool fire">Charizard</li>
+      </ul>
+      <button type="button" class="btn btn-primary">coolness</button>
+    </content>
+  </body>
+</html>
