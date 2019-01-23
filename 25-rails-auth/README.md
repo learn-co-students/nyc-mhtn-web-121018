@@ -12,6 +12,71 @@
 - Expose this information in a sample rails app
 - Go over sessions, cookies, and implement sign up, log in, and log out
 
+Security <== one of th ebigger things you don't want to reimplement
+
+1. What is authentication vs authorization?
+authentication => verifying who you are = you are who you are, (identity)
+authorization => allowing that person to use your site = preventing access to what you are not allowed to touch (access)
+
+Authentication
+Airports => when they check your passport => authenticate
+
+Authorization
+Terminal => at the gate => please let me on, ticket
+lounges <= can't get access unmless you're special
+
+Website
+- login => the gateway to proving who you are
+  - username / email <= identity
+  - password         <= object - passport/drivers license
+
+Try to check:
+1. naive old school way
+  - check a table <= that stores all of it
+  - users => username, password => post-it note
+    - anyone can read it
+    - you are compromised
+  - they are still in this era... lazy... money... greed... hubris
+- fix that problem of stolen databases
+  2. hide the password, make it not useful
+    - any algorithm to change it
+    - simplest algorithms, you can reverse it
+  3. let's not make it reverseable
+    - one way
+    - hashing algorithm => bcrypt
+      - turns the passsword into something else
+      - can't turn it back
+      - same algorithm on same text == same result
+    - buuuuuuut brute force
+      - rainbow table attack
+        - a table of all the most common passwords
+        - then they ran them all though the most common hashing algorithms
+        - then they just did .find_by
+    - about hashing algorithms =>
+      - unique strings, but they have a guarantee of uniqueness
+      - collision => md5, sha256, sha128
+      - if someone mistypes, you could login
+  4. how to fix attack by rainbows
+    - salt => a random string
+    - salt is always the same length defined by your library
+    - how the heck do we check this???
+    - ("sadfasdfsadf" + "password").reverse
+    - sadfasdfsadf.drowssapfdasfdsafdas
+    - sadfasdfsadf + (sadfasdfsadf + "password").reverse == sadfasdfsadf.drowssapfdasfdsafdas
+    - => rainbow table is using most common passwords
+      - rainbow table for each salt
+      - it doesn't fully protect YOU, but it protects the horde
+      - someone is probably doing this somewhere
+      - if you use a hashing algorithm that is too fast
+        - remaking rainbows is too easy
+  5. is use a sloooooow hashing algorithm
+    - then it's really expensive
+    - bcrypt
+
+- prevent DOS/DDOS
+- if they have crappy encryption
+
+
 ## Steps
 
 ### How does auth work in theory?
