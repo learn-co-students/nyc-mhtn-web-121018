@@ -1,5 +1,13 @@
 # Intro to the DOM 📜
 
+Document Object Model
+Document => HTML document => documents
+
+Data Struture => hashes, arrays, tree
+
+Element => HTML Tag => node
+Tag => p, h1, li, img, a => <doesntexist> => <div>
+
 ### The Document Object Model Overview
 - What is the DOM?
   - The DOM (Document Object Model) is a representation of an HTML document as a **tree** that can be manipulated with JavaScript
