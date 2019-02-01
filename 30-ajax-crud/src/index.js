@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	let allPokemon = []
 	const pokemonContainer = document.getElementById("pokemon-container")
 	const searchBar = document.getElementById("pokemon-search-input")
-	// const createForm = document.querySelector("#new-pokemon-form")
+
 
 	function fetchPokemon(){
 		fetch("http://localhost:3000/pokemon", {method: "GET"})
 		.then(     function(response) {
 			return response.json()
 		})
-		.then((data) => {
-			allPokemon = data
+		.then(    (data) => {
+			   allPokemon = data
 
-			showAllPokemon(data)
+			   showAllPokemon(data)
 		})
 	}
 
@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		// 3. STOP the form from doing that full page refresh nonsense
 		e.preventDefault()
 		// 4. SEND the data i just grabbed (pppst step 1) send it to the server
+
+		// OPTIMISIC RENDERING  NO GUARANTEE DB is updated
+		// update the DOM
 		fetch("http://localhost:3000/pokemon", {
 			method: "POST",
 			headers: {
@@ -60,8 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			pokemonContainer.innerHTML += renderSinglePokemon(pokemon)
 			// showAllPokemon(allPokemon)
 		})
-		// OPTIMISIC RENDERING  NO GUARANTEE DB is updated
-		// update the DOM
+
 	})
 
 
@@ -72,6 +74,51 @@ document.addEventListener('DOMContentLoaded', () => {
 		pokemonContainer.innerHTML = pokemons.map(renderSinglePokemon).join('')
 	}
 
+	pokemonContainer.addEventListener("submit", (e) => {
+		e.preventDefault()
+		console.log(e.target, "on submit")
+		const oldPokemon = allPokemon.find(function(pokemon) {
+			return pokemon.id === parseInt(e.target.dataset.id)
+		})
+		const oldPokeIndex = allPokemon.indexOf(oldPokemon)
+		console.log(oldPokeIndex, 'found it!')
+
+		if (e.target.id === "edit-pokemon-form") {
+			const editNameInput = e.target.querySelector("#edit-poke-name").value
+			const editFrontInput = e.target.querySelector("#edit-poke-front-sprite").value
+			const editBackInput = e.target.querySelector("#edit-poke-back-sprite").value
+
+			fetch(`http://localhost:3000/pokemon/${e.target.dataset.id}`,{
+				method: "PATCH",
+				headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+				body: JSON.stringify({
+					name: editNameInput,
+					sprites: {
+						"front": editFrontInput,
+						"back": editBackInput
+					}
+				})
+			})
+			.then(function(res) {
+				return res.json()
+			})
+			.then(function(pokemon){
+				// UPDATED THE DB!! ✔️✅ THANKS FETCH
+				// UPDATE THE DOM
+					// RERENDER with updated data
+					// FIND the pokemon in my local data
+
+					// UPDATE the local data (allPokemon)
+					// RE RENDER with the new data
+				// UPDATE LOCAL VARIABLES
+			allPokemon[oldPokeIndex] = pokemon
+			showAllPokemon(allPokemon)
+			})
+		}
+	})
 
 	pokemonContainer.addEventListener("click", (e) => {
 		if (e.target.tagName === "IMG") {
@@ -84,6 +131,37 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				e.target.src = foundPokemon.sprites.front
 			}
+		}
+
+		if (e.target.dataset.action === "edit") {
+			console.log(e.target)
+			e.target.innerHTML += `
+				<form class="form" data-id="${e.target.dataset.id}" id="edit-pokemon-form" action="index.html" method="post">
+					<label for="name">Name: </label>
+					<input id="edit-poke-name" type="text" name="name" value="">
+
+					<label for="front-sprite">Front Image: </label>
+					<input id="edit-poke-front-sprite" type="text" name="front-sprite" value="">
+
+					<label for="back-sprite">Back Sprite: </label>
+					<input id="edit-poke-back-sprite" type="text" name="back-sprite" value="">
+
+					<button type="submit" name="button">Edit That Pokemon!</button>
+				</form>
+
+			`
+		}
+		if (e.target.dataset.action === "delete") {
+
+
+			fetch(`http://localhost:3000/pokemon/${e.target.dataset.id}`,{
+				method: "DELETE"
+			}
+			.then(
+				// remove from DOM
+				// UPDATE LOCAL VARIABLES
+				// find the pokemon remove from allPokemon
+			)
 		}
 	})
 
@@ -103,13 +181,28 @@ document.addEventListener('DOMContentLoaded', () => {
 						<div style="width:96px;margin:auto">
 							<img data-id="${pokemon.id}" data-action="flip" class="toggle-sprite" src="${pokemon.sprites.front}">
 						</div>
-						<button data-id="${pokemon.id}" data-action="edit">edit</button>
-						<button data-id="${pokemon.id}" data-action="delete">delete</button>
+						<button data-id="${pokemon.id}" data-action="edit"> edit </button>
+						<button data-id="${pokemon.id}" data-action="delete"> deleterize </button>
 					</div>
 				</div>
 			</div>
 		`
 	}
+
+	// Make a pokemon editable
+		// Add an edit button
+	// the buttons dont do nuffin
+	// make the buttons work
+	 	//  make the edit button LISTEN for 'click'
+		// gotta get that button first!
+
+		// add (append) a new edit form to the pokemon card
+
+		// need that new edit form to do something
+		//  👂 LISTEN for 'submit' of THE BRAND NEW EDIT FORM I JUST MADE
+	// grab those inputs!
+// NO TO FULL PAGE RELOAD! e.preventDefault()
+// fetch req WITH a patch 🙌
 
 
 	fetchPokemon()

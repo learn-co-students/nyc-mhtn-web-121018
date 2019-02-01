@@ -4,7 +4,7 @@
       "height": 17,
       "weight": 905,
       "id": 7,
-      "name": "charizard",
+      "name": "",
       "abilities": [
         "blaze",
         "solar-power"
@@ -52,15 +52,15 @@
         "flying"
       ],
       "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
+        "front": "",
+        "back": ""
       }
     },
     {
       "height": 7,
       "weight": 99,
       "id": 15,
-      "name": "metapod",
+      "name": "aaaa",
       "abilities": [
         "shed-skin"
       ],
@@ -95,8 +95,8 @@
         "bug"
       ],
       "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png"
+        "front": "",
+        "back": ""
       }
     },
     {
@@ -201,7 +201,7 @@
       "height": 12,
       "weight": 380,
       "id": 28,
-      "name": "fearow",
+      "name": "Zero",
       "abilities": [
         "keen-eye",
         "sniper"
@@ -238,15 +238,15 @@
         "flying"
       ],
       "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/22.png"
+        "front": "",
+        "back": ""
       }
     },
     {
       "height": 35,
       "weight": 650,
       "id": 30,
-      "name": "arbok",
+      "name": "",
       "abilities": [
         "intimidate",
         "shed-skin",
@@ -293,8 +293,8 @@
         "poison"
       ],
       "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/24.png"
+        "front": "",
+        "back": ""
       }
     },
     {
@@ -444,7 +444,7 @@
       "height": 10,
       "weight": 295,
       "id": 41,
-      "name": "sandslash",
+      "name": "",
       "abilities": [
         "sand-veil",
         "sand-rush"
@@ -480,8 +480,8 @@
         "ground"
       ],
       "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/28.png"
+        "front": "",
+        "back": ""
       }
     },
     {
@@ -586,7 +586,7 @@
       "height": 13,
       "weight": 600,
       "id": 44,
-      "name": "nidoqueen",
+      "name": "nido2019wahteer",
       "abilities": [
         "poison-point",
         "rivalry",
@@ -635,15 +635,15 @@
         "ground"
       ],
       "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/31.png"
+        "front": "",
+        "back": ""
       }
     },
     {
       "height": 5,
       "weight": 90,
       "id": 45,
-      "name": "nidoran-m",
+      "name": "",
       "abilities": [
         "poison-point",
         "rivalry",
@@ -680,8 +680,8 @@
         "poison"
       ],
       "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/32.png"
+        "front": "",
+        "back": ""
       }
     },
     {
