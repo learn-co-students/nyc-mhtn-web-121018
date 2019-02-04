@@ -1,0 +1,16 @@
+{
+  "toys": [
+    {
+      "id": 8,
+      "name": "Little Green Men",
+      "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
+      "likes": 7
+    },
+    {
+      "name": "yaboi",
+      "image": "https://i.kym-cdn.com/photos/images/facebook/001/138/248/759.jpg",
+      "likes": 107,
+      "id": 9
+    }
+  ]
+}
