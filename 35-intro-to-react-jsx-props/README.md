@@ -3,17 +3,17 @@ Intro to React // JSX & Props
 
 ## SWBAT
 
-- [ ] Visualize/Identify Components on any website
-- [ ] Explain what a Component is conceptually in the UI
-- [ ] Explain what a React Component actually is in code (an object, made by a class)
-- [ ] Understand how create-react-app works and what it offers a developer
-- [ ] Setup a new React app and play around with building UIs
-- [ ] Use JSX to build custom components and render them in the browser
+- [x] Visualize/Identify Components on any website
+- [x] Explain what a Component is conceptually in the UI
+- [x] Explain what a React Component actually is in code (an object, made by a class)
+- [x] Understand how create-react-app works and what it offers a developer
+- [x] Setup a new React app and play around with building UIs
+- [x] Use JSX to build custom components and render them in the browser
 
-- [ ] Use props to make components more dynamic and reusable
-- [ ] See how props are to components as arguments are to functions
-- [ ] Begin to build modular & reusable components
-- [ ] Begin to see the declarative nature of React
+- [x] Use props to make components more dynamic and reusable
+- [x] See how props are to components as arguments are to functions
+- [x] Begin to build modular & reusable components
+- [x] Begin to see the declarative nature of React
 
 ## Outline
 
