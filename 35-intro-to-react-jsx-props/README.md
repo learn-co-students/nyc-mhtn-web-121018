@@ -55,11 +55,17 @@ Use historical context and the Mod 3 experience to frame the problem that React 
 
 _What are they?_
 
-> Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+**Component** ([as React describes it](https://reactjs.org/docs/components-and-props.html))
 
-If you have trouble figuring out what should be a component, try to use Single Responsibility Principle as one potential guideline in breaking down your UI.
+1. Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+2. Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called **“props”**) and **return React elements** _describing_ what should appear on the screen.
 
-With any given domain (website), you should be able to visually break it down into different and potentially reusable components.
+- **Point 1:** Great! We did this in **Step 1** and understand it (single responsibility principle).
+- **Point 2:** We see them say, _"return React elements"_. We know what an _element_ is! It's _JSX_!
+  - Components return (aka: render) JSX (or null if nothing is meant to be rendered).
+  - We don't know what **props** are though. That will be clarified once we learn about JSX.
+
+**Summary:** Components are reusable pieces of our UI that return (render) JSX. You can think of them as legos. Some are the same, some are different. They can be a single lego or a block of them. They are the building blocks of your UI.
 
 ### Environment Setup
 
@@ -135,10 +141,54 @@ The anatomy of JSX.
   - Declarative vs. Imperative
   - Virtual DOM
 
+JSX is just _syntactic sugar_ for a React method that returns an object. This object is an element and is a description that will be used by React to figure out what to render to the DOM.
+
+```javascript
+// This:
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
+// is this:
+'use strict';
+
+ReactDOM.render(React.createElement(
+  'h1',
+  null,
+  'Hello, world!'
+), document.getElementById('root'));
+
+// And this:
+React.createElement(
+  'h1',
+  null,
+  'Hello, world!'
+)
+// returns an object that looks like this:
+{
+  $$typeof: Symbol(react.element),
+  type: "h1",
+  key: null,
+  ref: null,
+  props: {
+    children: "Hello, world!"
+  }
+}
+```
+
+If you give this object over to `ReactDOM.render`, it will be able to understand it and render the same output to the DOM.
+
 **Example Component:**
 
 ```javascript
-// TODO: In class.
+// An example component can be as simple as this JSX (NOT HTML!):
+<h1>Hello, world!</h1>
+
+// Which you can render to the DOM like so:
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
 ```
 
 ### JSX in Depth
