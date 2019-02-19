@@ -9,6 +9,7 @@ Intro to React // JSX & Props
 - [ ] Understand how create-react-app works and what it offers a developer
 - [ ] Setup a new React app and play around with building UIs
 - [ ] Use JSX to build custom components and render them in the browser
+
 - [ ] Use props to make components more dynamic and reusable
 - [ ] See how props are to components as arguments are to functions
 - [ ] Begin to build modular & reusable components
@@ -27,6 +28,7 @@ Intro to React // JSX & Props
   - JSX & React Components
     - Making your first component
     - Component Composition
+
 - JSX in Depth
   - Intro to the Virtual DOM
 - JSX & props
@@ -39,6 +41,32 @@ Intro to React // JSX & Props
   - Declarative vs. Imperative
 
 ## Lecture Notes
+
+Mod 3
+
+Likes/Dislikes
+
+- just a matter of manipulating the JS to do what you want once you understood it
+- like it cause I can do it now
+- really have to spell out how it's going to loop and iterate
+  - ruby is more inferred
+  - more dynamic than ruby
+- callbacks are wild
+- pass by reference vs pass by value
+- event listeners => event delegation
+- DOM manipulation
+
+- finding specific parts of the DOM
+- traversing the DOM
+- binding this
+- HTML collections
+  - fake arrays
+- how arrays and object and objects and objects
+
+Domain = The App we will build throughout Mod 4
+- tinder for dogs
+- woofr
+
 
 ### Vanilla JS
 
