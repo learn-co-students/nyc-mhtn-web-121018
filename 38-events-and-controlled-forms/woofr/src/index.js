@@ -6,13 +6,18 @@ import * as serviceWorker from './serviceWorker';
 
 // Component Hierarchy
 /*
-  App
+  App <- up here for deciding what page to render
     Header
-    DogCards => list of Cards
-      ProfileBio
-      ProfilePictures
-    LikeButton
-    DislikeButton
+      JoinButton <== helps decide what to render
+
+    if
+      DogCards => list of Cards
+        ProfileBio
+        ProfilePictures
+      LikeButton
+      DislikeButton
+    else
+      AddDogForm
 */
 
 ReactDOM.render(<App />, document.getElementById('root'));
