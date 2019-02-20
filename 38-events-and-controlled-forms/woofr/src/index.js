@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -14,7 +14,6 @@ import * as serviceWorker from './serviceWorker';
     LikeButton
     DislikeButton
 */
-
 
 ReactDOM.render(<App hello="world"/>, document.getElementById('root'));
 
