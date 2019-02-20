@@ -26,18 +26,7 @@ do something when it hears the event <= the callback does something
 
 - React wraps all events and tries its best to abstract them into a single API that _should_ act the same across browsers.
 - This is one reason why React has what they call [_Synthetic Events_](https://reactjs.org/docs/handling-events.html).
-- Another reason is so the same API for all event handlers can be used for other platforms. For example: Instead of `react-dom`, we use `react-native`.
-
-**The `event` Object**
-
-- It is pooled. What that means is that this object will not live beyond the context it's called in. So if you want to pass the `event` object around and use it in an asynchronous function, it will suddenly "disappear" meaning the values in it become null.
-- React built it this way for performance reasons.
-- You can keep the `event` object around for longer if you use `event.persist()`.
-- Other useful things in the `event` object:
-  - `event.target` => points to the object (in our case a DOM element) where the `event` originates from.
-  - `event.target.value`
-  - `event.target.name`
-  - `event.target.dataset.dataValueCamelCased` === `event.target.getAttribute('data-value-as-written')`
+- Another reason is so this same concept of a unified API layer can be used for other platforms. That way we only have to learn how events work in React once, then use the same concept everywhere - _learn once, write everywhere_. For example: Instead of `react-dom`, we use `react-native`.
 
 ### React Components
 
@@ -91,3 +80,4 @@ What does this really mean?
 - [Class Field Declarations](https://github.com/tc39/proposal-class-fields)
 - [event.target vs event.currentTarget](https://github.com/facebook/react/issues/5733)
 - [JavaScript Event Delegation, and event.target vs. event.currentTarget](https://medium.com/@florenceliang/javascript-event-delegation-and-event-target-vs-event-currenttarget-c9680c3a46d1)
+- [super() vs super(props)](https://overreacted.io/why-do-we-write-super-props/)
