@@ -11,7 +11,11 @@ class Card extends Component {
     return (
       <div className="card-container">
         <ProfilePicture picture={src}/>
-        <ProfileBio name={name} age={age} breed={breed} />
+        <ProfileBio
+          name={name}
+          age={age}
+          breed={breed}
+        />
       </div>
     );
   }

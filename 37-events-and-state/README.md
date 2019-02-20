@@ -1,18 +1,26 @@
-State & Events
+Events & State
 ==============
 
 ## SWBAT
 
-- [ ] Add event handlers to elements in React
-- [ ] Explain why we have Synthetic Events
+- [x] Add event handlers to elements in React
+- [x] Explain why we have Synthetic Events
 - [ ] Correctly choose when to use `props` vs `state`, and explain why one would use one or the other
-- [ ] Instantiate `state` inside and outside of the `constructor`
-- [ ] Create event handler callbacks that manipulate `state`
-- [ ] Trigger rerenders by calling `setState`
+- [x] Instantiate `state` inside and outside of the `constructor`
+- [x] Create event handler callbacks that manipulate `state`
+- [x] Trigger rerenders by calling `setState`
 - [ ] Manipulate the DOM by changing values in `state` instead of using vanilla JS
 - [ ] Draw a component hierarchy and describe the Flow of Information
 
 ## Lecture Notes
+
+```
+add event listener <= add it to the ndoe
+ = kinda do
+add event type, handler <= callback
+ = callbacks
+do something when it hears the event <= the callback does something
+```
 
 ### Event Handlers
 

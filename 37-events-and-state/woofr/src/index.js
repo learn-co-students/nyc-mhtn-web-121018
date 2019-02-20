@@ -11,9 +11,11 @@ import * as serviceWorker from './serviceWorker';
     DogCards => list of Cards
       ProfileBio
       ProfilePictures
+    LikeButton
+    DislikeButton
 */
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App hello="world"/>, document.getElementById('root'));
 
 serviceWorker.unregister();
