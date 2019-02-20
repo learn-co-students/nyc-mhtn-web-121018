@@ -15,6 +15,6 @@ import * as serviceWorker from './serviceWorker';
     DislikeButton
 */
 
-ReactDOM.render(<App hello="world"/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 serviceWorker.unregister();

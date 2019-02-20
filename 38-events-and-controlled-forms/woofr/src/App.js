@@ -26,12 +26,10 @@ class App extends Component {
   }
 
   render() {
-    const { dogProfiles, currentDogIndex } = this.state;
-
     return (
       <div className="App">
         <Header />
-        <Card profile={dogProfiles[currentDogIndex]} />
+        <Card profile={this.state.dogProfiles[this.state.currentDogIndex]} />
         <button className="swipe-button" onClick={this.dislike}>Growl</button> {/* Dislike */}
         <button className="swipe-button" onClick={this.like}>Woof</button> {/* Like */}
       </div>
