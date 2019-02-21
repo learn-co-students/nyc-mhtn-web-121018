@@ -3,10 +3,10 @@ Thinking in React
 
 ## SWBAT
 
-- [ ] Write declarative code using `state` & JSX to reflect the DOM
+- [x] Write declarative code using `state` & JSX to reflect the DOM
 - [ ] Lift `state` when appropriate
-- [ ] Refactor React code
-- [ ] Think in React
+- [x] Refactor React code
+- [x] Think in React
 
 ## Deliverables
 
