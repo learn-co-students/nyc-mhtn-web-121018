@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import Card from './Card';
 
-class AddDogForm extends Component {
+// we will make this one component same as AddDogForm
+class EditDogForm extends Component {
   state = {
     name: '',
     age: 0,
@@ -11,7 +12,7 @@ class AddDogForm extends Component {
 
   handleSubmission = (event) => {
     event.preventDefault();
-    this.props.addDog(this.state);
+    this.props.editDog(this.state, this.props.currentDogIndex);
   }
 
   handleChange = (event) => {
@@ -39,4 +40,4 @@ class AddDogForm extends Component {
   }
 }
 
-export default AddDogForm;
+export default EditDogForm;

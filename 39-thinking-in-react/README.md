@@ -4,7 +4,7 @@ Thinking in React
 ## SWBAT
 
 - [ ] Write declarative code using `state` & JSX to reflect the DOM
-- [ ] Lift state when appropriate
+- [ ] Lift `state` when appropriate
 - [ ] Refactor React code
 - [ ] Think in React
 
@@ -14,6 +14,14 @@ Thinking in React
 - Add an edit dog form.
 - Build out Like button and a display page for it.
 - Code Review; Refactor if needed.
+
+
+Step 2 => hard code like crazy
+=> slowly pull things out into props
+
+`state` => mutable data => user input, virtual dom, it's whatever is on the screen that changes
+
+() => { this.callback(send, some, data, up) }
 
 ### Declarative Programming
 

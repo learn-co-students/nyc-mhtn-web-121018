@@ -4,6 +4,8 @@ import './App.css';
 import Header from './Header';
 import JudgementPage from './JudgementPage';
 import AddDogForm from './AddDogForm';
+import EditDogForm from './EditDogForm';
+import LikePage from './LikePage';
 
 import DOG_PROFILES from './data'; // API
 
@@ -15,6 +17,7 @@ class App extends Component {
       dogProfiles: DOG_PROFILES,
       currentDogIndex: 0,
       currentPage: 'judgement',
+      likedDogs: DOG_PROFILES.slice(0, 2)
     }
   }
 
@@ -24,6 +27,13 @@ class App extends Component {
 
   like = () => {
     console.log("Like");
+    // always make a copy => .slice(), [...]
+    // that's not perfect
+    this.setState({
+      likedDogs: [...this.state.likedDogs, this.state.dogProfiles[this.state.currentDogIndex]],
+      currentDogIndex: this.state.currentDogIndex + 1
+    })
+
   }
 
   changePage = (page) => {
@@ -37,11 +47,21 @@ class App extends Component {
     this.setState({ dogProfiles: newProfiles })
   }
 
+  // currentDog => object => but how do we know?!??!
+  editDog = (currentDog, index) => {
+    // edit that dog
+  }
+
   renderPage() {
     if (this.state.currentPage === 'judgement') {
       return <JudgementPage currentDogIndex={this.state.currentDogIndex} dogProfiles={this.state.dogProfiles} dislike={this.dislike} like={this.like} />
     } else if (this.state.currentPage === 'add_dog_form') {
       return <AddDogForm addDog={this.addDog} />;
+    } else if (this.state.currentPage === 'edit_dog_form') {
+      // start thinking
+      return <EditDogForm index={this.state.currentDogIndex} editDog={this.editDog} />;
+    } else if (this.state.currentPage === 'liked') {
+      return <LikePage likedDogs={this.state.likedDogs} />
     }
   }
 
