@@ -3,12 +3,12 @@ Advanced React / React Best Practices
 
 ## SWBAT
 
-- [ ] Write functional components
-- [ ] Explain the differences between functional and class components
-- [ ] Choose when to use presentational vs container components
+- [x] Write functional components
+- [x] Explain the differences between functional and class components
+- [x] Choose when to use presentational vs container components
 - [ ] Write clean React code
 
-- [ ] Lift `state` when appropriate
+- [x] Lift `state` when appropriate
 
 ## Objectives
 
@@ -16,12 +16,12 @@ Advanced React / React Best Practices
 - [ ] Functional vs Class components
 - [ ] Presentational vs Container components
 - Syntax often seen in React:
-  - [ ] Destructuring
-  - [ ] Spread
-  - [ ] Objects with the same key/value name
-  - [ ] constructor vs. ES7 instance variables
+  - [x] Destructuring
+  - [x] Spread
+  - [x] Objects with the same key/value name
+  - [x] constructor vs. ES7 instance variables
   - [ ] map (as a way to update objects in an array of objects)
-  - [ ] Object.assign (maybe, I never use this though)
+  - [x] Object.assign (maybe, I never use this though)
   - [ ] JSON.parse(JSON.stringify({ object: something }))
 
 ## Lecture Notes
