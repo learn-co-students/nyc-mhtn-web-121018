@@ -6,7 +6,6 @@ class Header extends Component {
   }
 
   render() {
-    console.log('Header', this.state);
     return (
       <div className="header-container">
         <h1>Woofr</h1>
