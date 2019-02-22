@@ -13,6 +13,17 @@ Component Lifecycle Methods
 * Lifecycle Methods Old
 * setState()
 
+One solution to the `shouldComponentUpdate()` exercise:
+
+```javascript
+shouldComponentUpdate(nextProps, nextState) {
+  let prevTime = (this.props.milliseconds / 1000).toFixed(this.props.accuracy);
+  let nextTime = (nextProps.milliseconds / 1000).toFixed(nextProps.accuracy);
+  console.log(prevTime, nextTime)
+  return prevTime !== nextTime;
+}
+```
+
 ## Summary
 
 Post React 16.3, some lifecycle methods were slated for deprecation in 17.0 (yet to be released) and new ones were introduced. These are the blogs/diagrams you'll want to read/see to explain each:
