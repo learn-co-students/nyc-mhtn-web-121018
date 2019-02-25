@@ -8,9 +8,16 @@
 * ~~render each hog name and picture in a tile~~
 * ~~show the hog's details upon a user's click~~
 * allow users to sort the hogs based on name and weight and filter the hogs that are greased
+  * do i have to prioritize them?
+    * greased => won't matter
+    * name, then weight
+    * weight, then name
+    * the ordering of how they check... or you just pick the priority
+      * name then weight
+  * blame the boss!
 
 * BONUS: allow users to hide hogs (not delete them, just hide them from view!)
-* BONUS: bring in pig gifs from an API
+* BONUS: bring in pig gifs from an API => componentDidMount
 * BONUS: implement [Semantic Cards](https://semantic-ui.com/views/card.html) for each hog
 
 ## Project requirements:
