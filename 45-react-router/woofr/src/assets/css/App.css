@@ -94,3 +94,7 @@ form > label {
   justify-content: space-around;
   border-bottom: 1px dashed black;
 }
+
+.active {
+  background-color: yellow;
+}

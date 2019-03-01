@@ -4,6 +4,9 @@ import './assets/css/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter as Router } from "react-router-dom";
+
+// setup
+ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
 
 serviceWorker.unregister();

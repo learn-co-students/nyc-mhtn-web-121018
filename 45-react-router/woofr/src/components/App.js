@@ -10,6 +10,8 @@ import LikePage from './LikePage';
 
 import DogAdapter from '../apis/DogAdapter';
 
+import { Switch, Route } from 'react-router-dom';
+
 class App extends Component {
   state = {
     dogProfiles: [],
@@ -121,52 +123,109 @@ class App extends Component {
   }
 
   renderPage() {
-    if (this.state.currentPage === 'judgement') {
-      return (
-        <JudgementPage
-          currentDogIndex={this.state.currentDogIndex}
-          dogProfiles={this.state.dogProfiles}
-          dislike={this.dislike}
-          like={this.like}
-        />
-      );
-    } else if (this.state.currentPage === 'add_dog_form') {
-      return (
-        <PreviewDogForm
-          name={this.state.name}
-          age={this.state.age}
-          breed={this.state.breed}
-          src={this.state.src}
-          handleChange={this.handleFormChange}
-          handleSubmit={this.addDog}
-          submitButtonName="Join the Pack!"
-        />
-      );
-    } else if (this.state.currentPage === 'edit_dog_form') {
-      return (
-        <PreviewDogForm
-          name={this.state.name}
-          age={this.state.age}
-          breed={this.state.breed}
-          src={this.state.src}
-          handleChange={this.handleFormChange}
-          handleSubmit={this.editDog}
-          submitButtonName="Edit dog details."
-        />
-      );
-    } else if (this.state.currentPage === 'liked') {
-      return (
-        <LikePage likedDogProfiles={this.state.likedDogProfiles} />
-      );
-    }
+    return (
+      <React.Fragment>
+
+      </React.Fragment>
+    );
+
+    //
+    // if (this.state.currentPage === 'judgement') {
+    //   return (
+    //     <JudgementPage
+    //       currentDogIndex={this.state.currentDogIndex}
+    //       dogProfiles={this.state.dogProfiles}
+    //       dislike={this.dislike}
+    //       like={this.like}
+    //     />
+    //   );
+    // } else if (this.state.currentPage === 'add_dog_form') {
+    //   return (
+    //     <PreviewDogForm
+    //       name={this.state.name}
+    //       age={this.state.age}
+    //       breed={this.state.breed}
+    //       src={this.state.src}
+    //       handleChange={this.handleFormChange}
+    //       handleSubmit={this.addDog}
+    //       submitButtonName="Join the Pack!"
+    //     />
+    //   );
+    // } else if (this.state.currentPage === 'edit_dog_form') {
+    //   return (
+    //     <PreviewDogForm
+    //       name={this.state.name}
+    //       age={this.state.age}
+    //       breed={this.state.breed}
+    //       src={this.state.src}
+    //       handleChange={this.handleFormChange}
+    //       handleSubmit={this.editDog}
+    //       submitButtonName="Edit dog details."
+    //     />
+    //   );
+    // } else if (this.state.currentPage === 'liked') {
+    //   return (
+    //     <LikePage likedDogProfiles={this.state.likedDogProfiles} />
+    //   );
+    // }
   }
 
+  // there are two ways to render with a route:
+  // props:
+  //    component => expects a function: the name of the compoent
+  //    render => this normally expects a function that returns JSX to render
+  // Route is just a fancy if statement
+  //   how exact works? has to exactly match, no more extra /
   render() {
+    // console.log('App props', this.props);
     return (
       <div className="App">
         <Header />
         <NavBar changePage={this.handlePageChange} />
         {this.renderPage()}
+        <Switch>
+          <Route
+            path="/judgement"
+            component={() => <JudgementPage
+              currentDogIndex={this.state.currentDogIndex}
+              dogProfiles={this.state.dogProfiles}
+              dislike={this.dislike}
+              like={this.like}
+            />}
+          />
+          <Route
+            path="/join"
+            component={() => <PreviewDogForm
+              name={this.state.name}
+              age={this.state.age}
+              breed={this.state.breed}
+              src={this.state.src}
+              handleChange={this.handleFormChange}
+              handleSubmit={this.addDog}
+              submitButtonName="Join the Pack!"
+            />}
+          />
+          <Route
+            path="/edit"
+            component={() => <PreviewDogForm
+              name={this.state.name}
+              age={this.state.age}
+              breed={this.state.breed}
+              src={this.state.src}
+              handleChange={this.handleFormChange}
+              handleSubmit={this.editDog}
+              submitButtonName="Edit dog details."
+            />}
+          />
+          <Route
+            path="/match/:id"
+            render={(routerProps) => <LikePage {...routerProps} likedDogProfiles={this.state.likedDogProfiles} />}
+          />
+          <Route
+            path="/"
+            component={() => <h1>Wecome to Woofr</h1>}
+          />
+        </Switch>
         <Footer who="gem rats" years="2019" />
       </div>
     );

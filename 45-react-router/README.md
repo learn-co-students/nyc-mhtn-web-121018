@@ -11,6 +11,9 @@ React Router
 
 ## Objectives
 
+Twitter => SPA, YouTube => no more refreshes
+- no refresh => nicer user experience
+
 - Static vs Dynamic Routing
 - HTML5 History API
 - React Router API
@@ -18,7 +21,7 @@ React Router
   - Route
   - Link / NavLink
   - Dynamic Routes (params)
-  - Switch
+  - Switch => good if you want a 404 page
   - push & Redirect
 
 ## Lecture Notes
