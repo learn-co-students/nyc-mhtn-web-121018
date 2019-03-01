@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header-container {
+  border: 1px dashed black;
+}
+
+.card-container {
+  border: 1px dashed black;
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.profile-pic {
+  border: 10px solid grey;
+  max-width: calc(100% - 20px);
+}
+
+.bio-container {
+  border: 1px dashed black;
+  font-size: 1.5rem;
+}
+
+.bio-container p, .bio-container h2 {
+  margin: 10px;
+}
+
+.swipe-button {
+  width: 25%;
+  font-size: 3rem;
+}
+
+.footer {
+  border: 1px dashed black;
+  margin-top: 10px;
+}
+
+.italics {
+  font-style: italic;
+}
+
+form {
+  margin: 10px;
+}
+
+form > label {
+  margin: 10px;
+}
+
+.like-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.like-container > .card-container {
+  width: 20%;
+}
+
+.nav-container {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px dashed black;
+}
