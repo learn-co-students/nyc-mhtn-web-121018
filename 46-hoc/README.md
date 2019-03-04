@@ -6,11 +6,16 @@ React Higher Order Component (HOC)
 - Why? Some background:
   - Factory Pattern
   - Composition vs Inheritance
-- Higher Order Functions
-- Higher Order Components
+- Higher Order Functions => composition
+- Higher Order Components => bestow upon you this shared functionality
 - withRouter
 - withLoading
 - withAd
+
+function that takes a component, returns a component
+
+make stuff using a method or a class
+=> you make stuff => object
 
 ## Resources
 

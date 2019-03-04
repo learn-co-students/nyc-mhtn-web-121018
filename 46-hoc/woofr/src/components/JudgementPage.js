@@ -7,7 +7,7 @@ const JudgementPage = (props) => {
 
   const renderCard = () => {
     if (currentDogIndex < dogProfiles.length) {
-      return <Card profile={dogProfiles[currentDogIndex]} />
+      return <Card profile={dogProfiles[currentDogIndex]} color="red" />
     } else {
       return <h2>No dogs left in the dog park.</h2>
     }

@@ -10,25 +10,39 @@ import LikePage from './LikePage';
 
 import DogAdapter from '../apis/DogAdapter';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
+import withLoading from '../hocs/withLoading';
+
+// whatever this wraps withRouter(App) will get all of those router props
+// => it solves it for just that component
 class App extends Component {
-  state = {
-    dogProfiles: [],
-    currentPage: 'judgement',
-    likedDogProfiles: [],
-    currentDogIndex: 0,
-    id: '',
-    name: '',
-    age: 0,
-    breed: '',
-    src: '',
+  constructor(props) {
+    super(props);
+
+    console.log('App', this.props);
+
+    this.state = {
+      dogProfiles: this.props.initialData,
+      currentPage: 'judgement',
+      likedDogProfiles: [],
+      currentDogIndex: 0,
+      id: '',
+      name: '',
+      age: 0,
+      breed: '',
+      src: '',
+    }
   }
 
+  // assume we had multiple branches, each with its own state
+  // which means each probably does some sort of componentDidMount
+  // fetching some data to update state
+  // componentDidMount => fetch => setState
+  // show "Loading..." instead
+  // withLoading
   componentDidMount() {
-    DogAdapter.getDogs()
-      .then(res => res.json())
-      .then(dogProfiles => this.setState({ dogProfiles }));
+    console.log('App componentDidMount');
     DogAdapter.getLikedDogs()
       .then(res => res.json())
       .then(likedDogProfiles => this.setState({ likedDogProfiles }));
@@ -122,67 +136,12 @@ class App extends Component {
       });
   }
 
-  renderPage() {
-    return (
-      <React.Fragment>
-
-      </React.Fragment>
-    );
-
-    //
-    // if (this.state.currentPage === 'judgement') {
-    //   return (
-    //     <JudgementPage
-    //       currentDogIndex={this.state.currentDogIndex}
-    //       dogProfiles={this.state.dogProfiles}
-    //       dislike={this.dislike}
-    //       like={this.like}
-    //     />
-    //   );
-    // } else if (this.state.currentPage === 'add_dog_form') {
-    //   return (
-    //     <PreviewDogForm
-    //       name={this.state.name}
-    //       age={this.state.age}
-    //       breed={this.state.breed}
-    //       src={this.state.src}
-    //       handleChange={this.handleFormChange}
-    //       handleSubmit={this.addDog}
-    //       submitButtonName="Join the Pack!"
-    //     />
-    //   );
-    // } else if (this.state.currentPage === 'edit_dog_form') {
-    //   return (
-    //     <PreviewDogForm
-    //       name={this.state.name}
-    //       age={this.state.age}
-    //       breed={this.state.breed}
-    //       src={this.state.src}
-    //       handleChange={this.handleFormChange}
-    //       handleSubmit={this.editDog}
-    //       submitButtonName="Edit dog details."
-    //     />
-    //   );
-    // } else if (this.state.currentPage === 'liked') {
-    //   return (
-    //     <LikePage likedDogProfiles={this.state.likedDogProfiles} />
-    //   );
-    // }
-  }
-
-  // there are two ways to render with a route:
-  // props:
-  //    component => expects a function: the name of the compoent
-  //    render => this normally expects a function that returns JSX to render
-  // Route is just a fancy if statement
-  //   how exact works? has to exactly match, no more extra /
   render() {
     // console.log('App props', this.props);
     return (
       <div className="App">
         <Header />
         <NavBar changePage={this.handlePageChange} />
-        {this.renderPage()}
         <Switch>
           <Route
             path="/judgement"
@@ -218,7 +177,7 @@ class App extends Component {
             />}
           />
           <Route
-            path="/match/:id"
+            path="/match"
             render={(routerProps) => <LikePage {...routerProps} likedDogProfiles={this.state.likedDogProfiles} />}
           />
           <Route
@@ -232,4 +191,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withLoading(withRouter(App), DogAdapter.getDogs());
