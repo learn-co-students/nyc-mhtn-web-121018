@@ -17,6 +17,7 @@ Intro to Redux
 - [ ] Use `connect` to give components the ability to listen for changes to the `store`.
 - [ ] Use `dispatch` in a React component.
 - [ ] Use `mapStateToProps` to read data from the `state` in the Redux `store`.
+- [ ] Rethinking in React with Redux
 
 ## Objectives
 
