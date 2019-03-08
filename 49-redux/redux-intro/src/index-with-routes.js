@@ -12,37 +12,55 @@ import { createStore } from 'redux';
 function reducer(state = { counter: 0 }, action) {
   console.log('%c REDUCER!', 'color: blue', state, action);
 
+  // 1. increment the counter => increment_counter
+  // if (action.type === "increment_counter") {
+  //   // what is the rule about
+  //   let newState = {...state} // Object.assign({}, state) // make a copy, tip: make state as shallow as possible
+  //   newState.counter++
+  //   return newState
+  // } else if (action.type === "not_increment_counter") {
+  //   // 2. decrement the counter => not_increment_counter
+  //   let newState = {...state}
+  //   newState.counter--
+  //   return newState
+  // }
+  // 3. set the counter to a new value
+
   switch(action.type) {
-    case "INCREMENT_COUNTER": // by convention, make these all CAPS
+    case "increment_counter":
       return {...state, counter: state.counter + 1}
-    case "NOT_INCREMENT_COUNTER":
+    case "not_increment_counter":
       return {...state, counter: state.counter - 1}
-    case "SET_COUNT_VALUE":
+    case "set_count_value":
+      // return {...state, counter: action.params}
       return {...state, counter: action.payload}
-    case "SET_SET_COUNT":
-      // return {...state, counter: action.payload.counter}
-      // return {...state, counter: action.payload.counter}
-      return {...state, ...action.payload} // Object.assign({}, state, action.payload)
     default:
       return state;
   }
+
+
+  // return state; // for anything that doesn't match
 }
 
 const store = createStore(reducer)
 console.log('%c #1 Initial state after createStore', 'color: pink', store.getState());
 
 // FETCH!      // url, => params
-store.dispatch({ type: "INCREMENT_COUNTER" })
+store.dispatch({ type: "increment_counter" })
 console.log('%c #2 state after dispatch', 'color: green', store.getState());
 
-store.dispatch({ type: "NOT_INCREMENT_COUNTER" })
+store.dispatch({ type: "not_increment_counter" })
 console.log('%c #3 state after dispatch', 'color: green', store.getState());
 
 // store.dispatch({ type: "set_count_value", params: "tim" })
-store.dispatch({ type: "SET_COUNT_VALUE", payload: "tim" }) // payload is the conventional way to send "params" to our reducer
+store.dispatch({ type: "set_count_value", payload: "tim" }) // payload is the conventional way to send "params" to our reducer
 console.log('%c #3 state after dispatch', 'color: green', store.getState());
 
-store.dispatch({ type: "SET_SET_COUNT", payload: { counter: "tim" } })
+// store.dispatch({ type: "hello" })
+// store.dispatch({ type: "hello" })
+// store.dispatch({ type: "hello" })
+// store.dispatch({ type: "hello" })
+// store.dispatch({ type: "hello" })
 
 
 

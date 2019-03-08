@@ -10,6 +10,26 @@ Intro to Redux
 - [ ] Read `state` in the `store`.
 - [ ] Make a connection b/w Redux and one other concept learned in Mods 1-4 (message passing).
 
+
+good
+setState
+modular nature
+props
+being able to reuse the same component in different branches
+conditional rendering
+
+bad
+props
+passing a really long distance => removes this entirely
+same component in different branches => siblings talking to each other
+
+
+ehh
+large amounts of state
+
+Please don't touch the DOM... except for certain cases
+- refs => node
+
 ## Objectives
 
 There are two libraries you need to learn to use Redux with React: `redux` && `react-redux`.
