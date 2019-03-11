@@ -13,3 +13,7 @@ export function decrement() {
 export function setCounter(counter) {
   return { type: SET_COUNTER, payload: counter }
 }
+
+export function setCounterToOneHundred() {
+  return { type: SET_COUNTER, payload: 100 }
+}

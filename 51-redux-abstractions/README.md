@@ -1,5 +1,5 @@
-Intro to Redux
-==============
+Redux Abstractions
+==================
 
 ## SWBATs
 
